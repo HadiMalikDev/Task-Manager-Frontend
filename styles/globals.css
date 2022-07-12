@@ -1,16 +1,387 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
-
 a {
   color: inherit;
   text-decoration: none;
 }
 
 * {
+  padding: 0;
+  margin: 0;
+  font-family: "Inter", sans-serif;
   box-sizing: border-box;
+}
+.center {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+.center a {
+  color: red;
+}
+.center--buttons {
+  margin-top: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+.center--buttons a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  color: white;
+  border: none;
+  font-weight: 400;
+  font-size: large;
+  width: 10rem;
+  height: 3rem;
+  margin: 10px;
+  cursor: pointer;
+}
+.center h1 {
+  font-size: clamp(20px, 8vw, 8rem);
+}
+#login {
+  background-color: lightcoral;
+}
+#register {
+  background-color: red;
+}
+
+/*Register Page*/
+
+.main {
+  display: flex;
+  height: 100vh;
+  padding: 10px;
+}
+.main h1 {
+  text-align: center;
+}
+.form--section {
+  flex-grow: 1;
+  flex-basis: 60vw;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+}
+.form--section input {
+  padding: 2px;
+}
+.form--section form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 40px 0px;
+}
+.form--section form > div {
+  display: flex;
+  justify-content: space-between;
+}
+.form--section label {
+  font-weight: bold;
+}
+.form--section form button {
+  align-self: center;
+}
+.form--section button {
+  width: 10rem;
+  height: 3rem;
+  margin: 10px;
+  cursor: pointer;
+  background-color: red;
+  border: none;
+  color: white;
+  font-weight: bold;
+}
+.form--section a {
+  color: red;
+  font-weight: bold;
+}
+.auth-image {
+  flex-grow: 100%;
+  width: 100%;
+  height: auto;
+  align-self: center;
+}
+.spacer {
+  flex-grow: 1;
+}
+.alternative {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+@media screen and (max-width: 650px) {
+  .auth-image {
+    display: none;
+  }
+}
+
+.nav {
+  text-align: center;
+  display: flex;
+  padding: 16px;
+  justify-content: space-between;
+  box-shadow: 0px 1px 4px 0.25px lightgray;
+}
+.nav button {
+  cursor: pointer;
+  padding: 0px 10px;
+  height: 30px;
+  color: white;
+  font-weight: bold;
+  background-color: rgb(179, 4, 4);
+  border: none;
+}
+.nav--buttons{
+  display: grid;
+  gap: 5px;
+  grid-template-columns: repeat(4,1fr);
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (max-width: 550px) {
+  .nav {
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    text-align: center;
+    padding: 5px;
+    gap: 10px;
+  }
+}
+.add-task-button {
+  position: fixed;
+  text-align: center;
+  bottom: 0;
+  right: 0;
+  margin: 10px;
+  border-radius: 100%;
+  color: white;
+  font-weight: bold;
+  border: none;
+  font-size: 1.5rem;
+  width: 3rem;
+  height: 3rem;
+  cursor: pointer;
+  background-color: rgb(179, 4, 4);
+}
+.task {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  width: 40vw;
+  height: 200px;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 2px 3px 8px 0.25px lightgray;
+}
+.task input {
+  width: 20px;
+}
+.task--title {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.task--description {
+  flex-grow: 1;
+  margin-top: 8px;
+  margin-left: 40px;
+  margin-bottom: 10px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.tasks--list {
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 5px;
+}
+.task--section--1 {
+  display: flex;
+  gap: 20px;
+}
+.task--options {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+.task--options button {
+  border: none;
+  font-weight: 700;
+  font-size: medium;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 5px;
+}
+.modify--button {
+  color: rgb(179, 4, 4);
+  background-color: white;
+}
+.delete--button {
+  background-color: rgb(179, 4, 4);
+  color: white;
+}
+.spacer {
+  flex-grow: 1;
+}
+.task input[type="checkbox"]:checked {
+  accent-color: red;
+}
+@media screen and (max-width: 550px) {
+  .task {
+    padding: 10px;
+  }
+  .task--options {
+    justify-content: center;
+    flex-direction: column;
+  }
+}
+@media screen and (max-width:350px) {
+  .task{
+    width: 80vw;
+  }
+}
+.task-page {
+  height: 100vh;
+  width: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.home-body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.main--content {
+  flex-grow: 9;
+}
+.task--form {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.task--form input,
+.task--form textarea {
+  width: 40vw;
+  height: 30px;
+  padding: 5px;
+  display: block;
+  border: 2px solid rgb(179, 4, 4);
+  border-radius: 4px;
+  margin: 10px;
+  resize: horizontal;
+  overflow: hidden;
+}
+.task--form textarea {
+  height: 80px;
+}
+.task--form h1 {
+  color: rgb(179, 4, 4);
+  letter-spacing: 2px;
+}
+.task--form button {
+  width: 10rem;
+  height: 3rem;
+  margin: 10px;
+  cursor: pointer;
+  background-color: rgb(179, 4, 4);
+  border: none;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+}
+.contact {
+  display: flex;
+  height: 100%;
+}
+.contact > a {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  cursor: pointer;
+}
+.contact > a > h1 {
+  font-weight: 100;
+  text-align: center;
+  margin: 20px auto;
+}
+.logo--image {
+  max-width: 100%;
+  height: auto;
+  padding: 4rem;
+}
+.github {
+  /*<a href="https://www.flaticon.com/free-icons/cat" title="cat icons">Cat icons created by Dave Gandy - Flaticon</a>*/
+  /*background-image: url("../public/github.png");*/
+  transition: background-color 0.25s;
+  color: transparent;
+}
+.github:hover {
+  background-color: rgba(0, 0, 0, 0.74);
+  color: white;
+}
+.gmail {
+  /*<a href="https://www.flaticon.com/free-icons/gmail" title="gmail icons">Gmail icons created by Freepik - Flaticon</a>*/
+  transition: background-color 0.25s;
+  color: transparent;
+}
+.gmail:hover {
+  background-color: rgba(179, 4, 4, 0.7);
+  color: white;
+}
+.linkedIn {
+  /*<a href="https://www.flaticon.com/free-icons/linkedin" title="linkedin icons">Linkedin icons created by riajulislam - Flaticon</a>*/
+  transition: background-color 0.25s;
+  color: transparent;
+}
+.linkedIn:hover {
+  background-color: rgba(0, 114, 177, 0.5);
+  color: white;
+}
+
+.footer {
+  height: 60px;
+  align-self: flex-end;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  width: 100vw;
+  background-color: rgb(88, 86, 86);
+  color: white;
+  text-align: center;
+  font-size: 10px;
+}
+.custom--children {
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (max-width: 550px) {
+  .contact {
+    flex-direction: column;
+  }
+}
+
+.about {
+  margin: 20px;
+  line-height: 2em;
+}
+.about h1,
+.about h2 {
+  margin: 20px 0px;
 }
