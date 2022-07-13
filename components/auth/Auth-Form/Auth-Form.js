@@ -1,34 +1,8 @@
 import React from "react";
+import ErrorComponent from "../../shared/error";
+const { handleFormInputChange, handleSubmission } =
+  require("./functions").default;
 
-function handleFormInputChange(event, stateFunction) {
-  const { name, value } = event.target;
-  stateFunction((prev) => ({ ...prev, [name]: value }));
-}
-async function handleSubmission(event, formData, isRegister) {
-  event.preventDefault();
-
-  const apiDomainName = "http://localhost:5000";
-  const endPoint = apiDomainName.concat(
-    isRegister ? "/users/register" : "/users/login"
-  );
-  console.log(endPoint);
-  const result = await fetch(endPoint, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(formData),
-  });
-  if (result.ok) {
-    console.log("User registered!");
-    const { token } = await result.json();
-    localStorage.setItem("token", token);
-    console.log(token)
-  } else {
-    const res = await result.json();
-    alert(res.error);
-  }
-}
 export default function FormSection({ isRegister }) {
   const initialObject = {
     email: "",
@@ -39,11 +13,22 @@ export default function FormSection({ isRegister }) {
     initialObject.confirmPassword = "";
   }
   const [formData, setFormData] = React.useState(initialObject);
+  const [loading, setLoading] = React.useState(false);
+  const [error, setError] = React.useState(null);
+
+  if (loading) {
+    return <h2 className="center">Loading...</h2>;
+  }
   return (
     <div className="form--section">
       <div className="spacer"></div>
       <h1>{isRegister ? "Create Account" : "Login"}</h1>
-      <form onSubmit={(event) => handleSubmission(event, formData, isRegister)}>
+      {error && <ErrorComponent message={error} />}
+      <form
+        onSubmit={(event) =>
+          handleSubmission(event, formData, isRegister, setLoading, setError)
+        }
+      >
         {isRegister && (
           <div>
             <label htmlFor="name">Username</label>
@@ -71,7 +56,7 @@ export default function FormSection({ isRegister }) {
           <input
             name="password"
             type="password"
-            placeholder="Min length 8"
+            placeholder="Min length 9"
             value={formData.password}
             onChange={(event) => handleFormInputChange(event, setFormData)}
           />

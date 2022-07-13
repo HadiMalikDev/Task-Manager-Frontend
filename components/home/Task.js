@@ -18,7 +18,7 @@ export default function Task({ props, toggleCompleted, deleteTask }) {
       <div className="spacer"></div>
       <div className="task--options">
         <Link href={`/home/task?taskId=${taskId}`}>
-          <button className="modify--button">Modify Task</button>
+          <button className="view--button">View Task</button>
         </Link>
         <button className="delete--button" onClick={deleteTask}>
           Delete Task

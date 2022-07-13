@@ -17,6 +17,11 @@ export default function Navbar() {
         <Link href="/home/about">
           <button>About</button>
         </Link>
+        <Link href="/">
+          <button onClick={() => localStorage.removeItem("token")}>
+            Logout
+          </button>
+        </Link>
       </div>
     </nav>
   );

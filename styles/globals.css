@@ -9,6 +9,11 @@ a {
   font-family: "Inter", sans-serif;
   box-sizing: border-box;
 }
+.add-link {
+  display: inline;
+  cursor: pointer;
+  color: rgb(179, 4, 4);
+}
 .center {
   text-align: center;
   display: flex;
@@ -140,10 +145,10 @@ a {
   background-color: rgb(179, 4, 4);
   border: none;
 }
-.nav--buttons{
+.nav--buttons {
   display: grid;
   gap: 5px;
-  grid-template-columns: repeat(4,1fr);
+  grid-template-columns: repeat(5, 1fr);
   justify-content: center;
   align-items: center;
 }
@@ -175,6 +180,7 @@ a {
 }
 .task {
   display: flex;
+  cursor: pointer;
   flex-direction: column;
   padding: 1rem;
   width: 40vw;
@@ -223,7 +229,7 @@ a {
   padding: 10px;
   border-radius: 5px;
 }
-.modify--button {
+.view--button {
   color: rgb(179, 4, 4);
   background-color: white;
 }
@@ -246,8 +252,8 @@ a {
     flex-direction: column;
   }
 }
-@media screen and (max-width:350px) {
-  .task{
+@media screen and (max-width: 350px) {
+  .task {
     width: 80vw;
   }
 }

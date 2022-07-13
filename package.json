@@ -17,5 +17,6 @@
   "devDependencies": {
     "eslint": "8.19.0",
     "eslint-config-next": "12.2.0"
-  }
+  },
+  "proxy":"https://git.heroku.com/hadi-task-api-node.git:10739"
 }

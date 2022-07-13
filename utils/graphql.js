@@ -1,5 +1,7 @@
+import getDomain from "./config";
+
 export default function sendGraphQLQuery(query, variables, abortSignal) {
-  return fetch("http://localhost:5000/graphql", {
+  return fetch(`${getDomain()}/graphql`, {
     signal: abortSignal,
     method: "POST",
     headers: {

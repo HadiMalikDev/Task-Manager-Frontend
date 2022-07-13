@@ -7,7 +7,8 @@ const nextConfig = {
       use: ["@svgr/webpack"]
     });
     return config
-  }
+  },
+  target:"serverless"
 }
 
 module.exports = nextConfig
