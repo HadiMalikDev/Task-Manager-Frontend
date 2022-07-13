@@ -13,7 +13,7 @@ Overall, it took me around 10-ish days to construct the frontend. I had had enou
 The main difficulties I encountered were managing state, though it did get resolved quickly. State and hooks were rather easy to pick up, owing to my previous experience in Flutter, which too is declarative. The concepts I learnt in Flutter could be ported to React, hence allowing me to 'think in React' easily.
 
 ## Live Version
-The live version, hosted on Netlify, can be found [here](https://62cec71922d6f80009dfbd21--sprightly-jalebi-7feab5.netlify.app/)
+The live version, hosted on Netlify, can be found [here](https://main--sprightly-jalebi-7feab5.netlify.app/)
 
 ## What's next for this app
 I plan on adding a toggle theme(Dark and Light modes) button to the entire application. As is well known, programmers hate light mode. Hehe. If the backend gets an update(by yours truly), the frontend could see small or large overhauls as per requirement. Also, if users have any suggestions, then their suggestions might just get implemented too!
