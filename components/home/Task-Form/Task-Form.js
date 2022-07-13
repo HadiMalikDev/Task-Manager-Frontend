@@ -36,7 +36,8 @@ export default function TaskForm() {
         controller.abort();
       };
     }
-  }, []);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  },[]);
   if (isUpdation && isLoading) {
     return <h2>Loading...</h2>;
   }
@@ -48,7 +49,14 @@ export default function TaskForm() {
         onSubmit={(e) => {
           e.preventDefault();
           const controller = new AbortController();
-          handleSubmission(taskObject, isUpdation, taskId, controller.signal,setLoading,setError);
+          handleSubmission(
+            taskObject,
+            isUpdation,
+            taskId,
+            controller.signal,
+            setLoading,
+            setError
+          );
         }}
       >
         <h1>{isUpdation ? "Update Task" : "Create Task"}</h1>

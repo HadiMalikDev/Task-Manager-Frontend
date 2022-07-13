@@ -17,6 +17,7 @@ export default function TasksList() {
     return function cleanUp() {
       controller.abort();
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   if (isLoading) {

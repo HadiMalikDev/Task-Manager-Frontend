@@ -158,5 +158,5 @@ async function deleteTask(
     }
   }
 }
-
-export default { loadTasks, toggleCompleted, deleteTask };
+const exportObject={ loadTasks, toggleCompleted, deleteTask }
+export default exportObject;

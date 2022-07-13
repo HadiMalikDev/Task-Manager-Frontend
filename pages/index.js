@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 export default function HomePage() {
   return (
@@ -9,16 +10,19 @@ export default function HomePage() {
           <a
             href="https://www.linkedin.com/in/muhammad-hadi-223118209/"
             target="_blank"
+            rel="noreferrer"
           >
             Muhammad Hadi
           </a>
         </span>
       </p>
       <div className="center--buttons">
-        <a id="login">Login</a>
-        <a id="register" href="/auth/register">
-          Register
-        </a>
+        <Link href="/auth/login">
+          <button id="login">Login</button>
+        </Link>
+        <Link href="/auth/register">
+          <button id="register">Register</button>
+        </Link>
       </div>
     </main>
   );

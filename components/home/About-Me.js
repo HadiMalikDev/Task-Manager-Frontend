@@ -13,13 +13,13 @@ export default function AboutMe() {
       <p>
         Making the site responsive was tricky, and required constant code
         refactors to make the site easy to view on all screen sizes. Though this
-        application is the first time I'm utilizing React in a self project, I
+        application is the first time I am utilizing React in a self project, I
         did not face much difficulty in using React and dealing with its state.
         <br />
-        This is not due to my "brilliance", so to say but rather my previous
-        experience with Flutter. Flutter extensively utilizes the concept of
-        reusable components, state and passing of props down to children. It was
-        easy to port that knowledge over to React and apply it here.
+        This is due to my previous experience with Flutter. Flutter extensively
+        utilizes the concept of reusable components, state and passing of props
+        down to children. It was easy to port that knowledge over to React and
+        apply it here.
       </p>
     </div>
   );

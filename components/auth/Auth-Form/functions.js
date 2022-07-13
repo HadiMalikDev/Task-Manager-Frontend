@@ -57,4 +57,5 @@ async function handleSubmission(
     setError(error.message);
   }
 }
-export default { handleFormInputChange, handleSubmission };
+const exportObject = { handleFormInputChange, handleSubmission };
+export default exportObject;

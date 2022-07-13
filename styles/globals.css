@@ -32,7 +32,7 @@ a {
   align-items: center;
   justify-content: center;
 }
-.center--buttons a {
+.center--buttons button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -318,8 +318,9 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-end;
+  align-items: center;
   cursor: pointer;
+  padding: 20px;
 }
 .contact > a > h1 {
   font-weight: 100;

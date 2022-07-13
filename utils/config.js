@@ -1,5 +1,5 @@
 export default function getDomain() {
-  const isProduction = true;
+  const isProduction = false;
   return isProduction
     ? "https://hadi-task-api-node.herokuapp.com"
     : "http://localhost:5000";

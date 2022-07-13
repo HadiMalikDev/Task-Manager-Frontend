@@ -83,7 +83,7 @@ async function handleSubmission(
   abortSignal,
   setLoading,
   setError
-) { 
+) {
   if (!taskObject.title || !taskObject.description) {
     setLoading(false);
     setError("One or more of the required fields are empty.");
@@ -117,8 +117,9 @@ async function handleSubmission(
   }
 }
 
-export default {
+const exportObject = {
   getTask,
   handleFormChange,
   handleSubmission,
 };
+export default exportObject;
